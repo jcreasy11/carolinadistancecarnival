@@ -14,6 +14,13 @@
 body{margin:0;background:#F4F1EA;font-family:'Inter',system-ui,sans-serif;color:#1A1742}
 a{color:inherit}
 input,select{font-family:'Inter',system-ui,sans-serif}
+@media (max-width:700px){
+.tw-in{min-width:0!important}
+.th-row{display:none!important}
+.tr-row{flex-wrap:wrap!important;gap:2px 14px!important;padding:14px 16px!important;align-items:baseline!important}
+.tr-row > div{flex:0 1 auto!important;width:auto!important;min-width:0!important;text-align:left!important}
+.tr-row > div:nth-child(n+3){flex:1 1 100%!important;font-size:15px!important;line-height:1.4!important}
+}
 </style>
 </helmet>
 <div style="width:100%;background:#F4F1EA;color:#1A1742;font-family:'Inter',system-ui,sans-serif">
@@ -87,16 +94,16 @@ input,select{font-family:'Inter',system-ui,sans-serif}
 <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(32px,4.5vw,48px);line-height:1;text-transform:uppercase">{{evTitle}}</h2>
 <div style="font-weight:600;color:#47456A">{{evCount}}</div>
 </div>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:560px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:560px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
 <div style="flex:0 0 48px">#</div>
 <div style="flex:2 1 0">Athlete</div>
 <div style="flex:0 0 110px">Seed</div>
 <div style="flex:2 1 0">Team</div>
 </div>
 <sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3">
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3">
 <div style="flex:0 0 48px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{r.n}}</div>
 <div style="flex:2 1 0;font-weight:600">{{r.name}}</div>
 <div style="flex:0 0 110px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{r.seed}}</div>
@@ -114,16 +121,16 @@ input,select{font-family:'Inter',system-ui,sans-serif}
 <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(32px,4.5vw,48px);line-height:1;text-transform:uppercase">{{projTitle}}</h2>
 <div style="font-weight:600;color:#47456A">Scored cross-country style from seed marks</div>
 </div>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
 <div style="flex:0 0 48px">Place</div>
 <div style="flex:2 1 0">Team</div>
 <div style="flex:0 0 110px;text-align:right">Proj. score</div>
 <div style="flex:3 1 0">Scoring seeds</div>
 </div>
 <sc-for list="{{teams}}" as="t" hint-placeholder-count="5">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3">
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3">
 <div style="flex:0 0 48px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{t.place}}</div>
 <div style="flex:2 1 0;font-weight:600">{{t.team}}</div>
 <div style="flex:0 0 110px;text-align:right;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{t.score}}</div>

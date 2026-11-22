@@ -13,6 +13,15 @@
 <style>
 body{margin:0;background:#F4F1EA;font-family:'Inter',system-ui,sans-serif;color:#1A1742}
 a{color:inherit}
+.mlbl{display:none}
+@media (max-width:700px){
+.tw-in{min-width:0!important}
+.th-row{display:none!important}
+.mlbl{display:inline!important;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#47456A;margin-right:8px}
+.tr-row{flex-wrap:wrap!important;gap:2px 14px!important;padding:14px 16px!important;align-items:baseline!important}
+.tr-row > div{flex:0 1 auto!important;width:auto!important;min-width:0!important;text-align:left!important}
+.tr-row > div:nth-child(n+3){flex:1 1 100%!important;line-height:1.4!important}
+}
 </style>
 </helmet>
 <div style="width:100%;background:#F4F1EA;color:#1A1742;font-family:'Inter',system-ui,sans-serif">
@@ -53,16 +62,16 @@ a{color:inherit}
 <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(36px,5vw,56px);line-height:1;text-transform:uppercase">Meet Records</h2>
 <div role="group" aria-label="Gender" style="display:flex;gap:8px"><button type="button" style="{{boysStyle}}" onClick="{{showBoys}}" aria-pressed="{{boysOn}}">Boys</button><button type="button" style="{{girlsStyle}}" onClick="{{showGirls}}" aria-pressed="{{girlsOn}}">Girls</button></div>
 </div>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
 <div style="flex:1.2 1 0">Event</div>
 <div style="flex:0 0 120px">Mark</div>
 <div style="flex:2 1 0">Athlete and school</div>
 <div style="flex:0 0 80px;text-align:right">Year</div>
 </div>
 <sc-for list="{{records}}" as="r" hint-placeholder-count="6">
-<div style="display:flex;gap:16px;align-items:baseline;padding:18px 24px;border-bottom:1px solid #E5E0D3">
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:18px 24px;border-bottom:1px solid #E5E0D3">
 <div style="flex:1.2 1 0;font-weight:600">{{r.event}}</div>
 <div style="flex:0 0 120px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:28px;line-height:1">{{r.mark}}</div>
 <div style="flex:2 1 0;color:#47456A">{{r.who}}</div>
@@ -82,13 +91,13 @@ a{color:inherit}
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;min-width:64px">Gender</span><button type="button" style="{{cgBoysStyle}}" onClick="{{setCGBoys}}" aria-pressed="{{cgBoysOn}}">Boys</button><button type="button" style="{{cgGirlsStyle}}" onClick="{{setCGGirls}}" aria-pressed="{{cgGirlsOn}}">Girls</button><button type="button" style="{{cgAllStyle}}" onClick="{{setCGAll}}" aria-pressed="{{cgAllOn}}">All</button></div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;min-width:64px">Event</span><button type="button" style="{{ceMileStyle}}" onClick="{{setCEMile}}" aria-pressed="{{ceMileOn}}">Mile</button><button type="button" style="{{ce800Style}}" onClick="{{setCE800}}" aria-pressed="{{ce800On}}">800m</button><button type="button" style="{{ce3200Style}}" onClick="{{setCE3200}}" aria-pressed="{{ce3200On}}">3200m</button><button type="button" style="{{ceMSStyle}}" onClick="{{setCEMS}}" aria-pressed="{{ceMSOn}}">Middle School</button><button type="button" style="{{ceAllStyle}}" onClick="{{setCEAll}}" aria-pressed="{{ceAllOn}}">All</button></div>
 </div>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:720px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:720px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
 <div style="flex:0 0 70px">Year</div><div style="flex:0 0 170px">Event</div><div style="flex:0 0 80px">Gender</div><div style="flex:1.4 1 0">Champion</div><div style="flex:1.4 1 0">Team</div><div style="flex:0 0 90px">Mark</div>
 </div>
 <sc-for list="{{champRows}}" as="y" hint-placeholder-count="6">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3;color:#47456A">
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3;color:#47456A">
 <div style="flex:0 0 70px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;color:#1A1742"><a href="{{y.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{y.year}}</a></div>
 <div style="flex:0 0 170px;font-weight:600;color:#1A1742">{{y.event}}</div>
 <div style="flex:0 0 80px">{{y.gender}}</div>
@@ -110,11 +119,11 @@ a{color:inherit}
 </div>
 <p style="margin:0 0 20px;max-width:680px;line-height:1.6;color:#47456A">{{allTimeNote}}</p>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 20px"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;min-width:64px">Event</span><button type="button" style="{{alMileStyle}}" onClick="{{setALMile}}" aria-pressed="{{alMileOn}}">HS Mile</button><button type="button" style="{{al800Style}}" onClick="{{setAL800}}" aria-pressed="{{al800On}}">HS 800m</button><button type="button" style="{{al3200Style}}" onClick="{{setAL3200}}" aria-pressed="{{al3200On}}">HS 3200m</button><button type="button" style="{{alMSStyle}}" onClick="{{setALMS}}" aria-pressed="{{alMSOn}}">MS Mile</button></div>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{alRows}}" as="r" hint-placeholder-count="10">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
 </sc-for>
 </div>
 </div>
@@ -132,11 +141,11 @@ a{color:inherit}
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;min-width:64px">Gender</span><button type="button" style="{{srgBoysStyle}}" onClick="{{setSRGBoys}}" aria-pressed="{{srgBoysOn}}">Boys</button><button type="button" style="{{srgGirlsStyle}}" onClick="{{setSRGGirls}}" aria-pressed="{{srgGirlsOn}}">Girls</button><button type="button" style="{{srgAllStyle}}" onClick="{{setSRGAll}}" aria-pressed="{{srgAllOn}}">All</button></div>
 <p style="display:{{srPromptShow}};margin:8px 0 0;line-height:1.6;color:#47456A">{{srPrompt}}</p>
 <div style="display:{{srTableShow}}">
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div><div style="flex:0.8">Event</div><div style="flex:0.6">Place</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div><div style="flex:0.8">Event</div><div style="flex:0.6">Place</div></div>
 <sc-for list="{{srRows}}" as="r" hint-placeholder-count="10">
-<div style="display:flex;gap:16px;align-items:baseline;padding:14px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div><div style="flex:0.8;color:#47456A">{{r.c7}}</div><div style="flex:0.6;color:#47456A">{{r.c6}}</div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:14px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div><div style="flex:0.8;color:#47456A">{{r.c7}}</div><div style="flex:0.6;color:#47456A">{{r.c6}}</div></div>
 </sc-for>
 </div>
 </div>
@@ -153,9 +162,9 @@ a{color:inherit}
 </div>
 <p style="margin:0 0 20px;max-width:680px;line-height:1.6;color:#47456A">{{classNote}}</p>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 20px"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;min-width:64px">Event</span><button type="button" style="{{clMileStyle}}" onClick="{{setCLMile}}" aria-pressed="{{clMileOn}}">HS Mile</button><button type="button" style="{{cl800Style}}" onClick="{{setCL800}}" aria-pressed="{{cl800On}}">HS 800m</button><button type="button" style="{{cl3200Style}}" onClick="{{setCL3200}}" aria-pressed="{{cl3200On}}">HS 3200m</button><button type="button" style="{{clMSStyle}}" onClick="{{setCLMS}}" aria-pressed="{{clMSOn}}">MS Mile</button></div>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:1.2">Grade</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:1.2">Grade</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{classes}}" as="r" hint-placeholder-count="5">
 <details style="border-bottom:1px solid #E5E0D3">
 <summary style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;cursor:pointer;list-style:none"><div style="flex:1.2;font-weight:600;color:#1A1742;text-decoration:underline;text-underline-offset:4px">{{r.c1}} <span style="font-size:12px;color:#AC312A">&#9662;</span></div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></summary>
@@ -178,11 +187,11 @@ a{color:inherit}
 <div role="group" aria-label="Gender" style="display:flex;gap:8px"><button type="button" style="{{boysStyle}}" onClick="{{showBoys}}" aria-pressed="{{boysOn}}">Boys</button><button type="button" style="{{girlsStyle}}" onClick="{{showGirls}}" aria-pressed="{{girlsOn}}">Girls</button></div>
 </div>
 <p style="margin:0 0 20px;max-width:680px;line-height:1.6;color:#47456A">{{heatNote}}</p>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:1.2">Heat</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:1.2">Heat</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{heats}}" as="r" hint-placeholder-count="5">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:1.2;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:1.2;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
 </sc-for>
 </div>
 </div>
@@ -196,11 +205,11 @@ a{color:inherit}
 <div role="group" aria-label="Gender" style="display:flex;gap:8px"><button type="button" style="{{boysStyle}}" onClick="{{showBoys}}" aria-pressed="{{boysOn}}">Boys</button><button type="button" style="{{girlsStyle}}" onClick="{{showGirls}}" aria-pressed="{{girlsOn}}">Girls</button></div>
 </div>
 <p style="margin:0 0 20px;max-width:680px;line-height:1.6;color:#47456A">The best Mile mark in meet history from each state, ranked fastest first. The state is the state of the athlete’s team, or the state an unattached runner listed. Converted 1600m marks (c) from 2021 and 2022 are included.</p>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">State</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">State</div><div style="flex:1">Mark</div><div style="flex:2">Athlete</div><div style="flex:2">Team</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{states}}" as="r" hint-placeholder-count="5">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
 </sc-for>
 </div>
 </div>
@@ -220,11 +229,11 @@ a{color:inherit}
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 16px"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;min-width:64px">Event</span><button type="button" style="{{s4b0Style}}" onClick="{{setS4B0}}" aria-pressed="{{s4b0On}}">{{s4l0}}</button><button type="button" style="{{s4b1Style}}" onClick="{{setS4B1}}" aria-pressed="{{s4b1On}}">{{s4l1}}</button><button type="button" style="{{s4b2Style}}" onClick="{{setS4B2}}" aria-pressed="{{s4b2On}}">{{s4l2}}</button><button type="button" style="{{s4b3Style}}" onClick="{{setS4B3}}" aria-pressed="{{s4b3On}}">{{s4l3}}</button></div>
 <p style="display:{{s4EmptyShow}};margin:0 0 16px;line-height:1.6;color:#47456A">No results for that search in this event. Try another event or clear the search.</p>
 <div style="display:{{s4TableShow}}">
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Final 400</div><div style="flex:2">Athlete</div><div style="flex:2">Team and Race</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Final 400</div><div style="flex:2">Athlete</div><div style="flex:2">Team and Race</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{s4Rows}}" as="r" hint-placeholder-count="10">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
 </sc-for>
 </div>
 </div>
@@ -235,11 +244,11 @@ a{color:inherit}
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 16px"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;min-width:64px">Event</span><button type="button" style="{{s8b0Style}}" onClick="{{setS8B0}}" aria-pressed="{{s8b0On}}">{{s8l0}}</button><button type="button" style="{{s8b2Style}}" onClick="{{setS8B2}}" aria-pressed="{{s8b2On}}">{{s8l2}}</button><button type="button" style="{{s8b3Style}}" onClick="{{setS8B3}}" aria-pressed="{{s8b3On}}">{{s8l3}}</button></div>
 <p style="display:{{s8EmptyShow}};margin:0 0 16px;line-height:1.6;color:#47456A">No results for that search in this event. Try another event or clear the search.</p>
 <div style="display:{{s8TableShow}}">
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Final 800</div><div style="flex:2">Athlete</div><div style="flex:2">Team and Race</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Final 800</div><div style="flex:2">Athlete</div><div style="flex:2">Team and Race</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{s8Rows}}" as="r" hint-placeholder-count="10">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
 </sc-for>
 </div>
 </div>
@@ -247,21 +256,21 @@ a{color:inherit}
 </div>
 <h3 style="margin:40px 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:32px;line-height:1;text-transform:uppercase">Biggest Movers, Final 400</h3>
 <p style="margin:0 0 20px;max-width:680px;line-height:1.6;color:#47456A">Places gained in the runner's own heat from the 1209 split to the finish. A big gain in a slow heat means passing slower runners, so the next list narrows it to the top five heats.</p>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Gained</div><div style="flex:2">Athlete</div><div style="flex:2">Team and move</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Gained</div><div style="flex:2">Athlete</div><div style="flex:2">Team and move</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{movers}}" as="r" hint-placeholder-count="5">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
 </sc-for>
 </div>
 </div>
 <h3 style="margin:40px 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:32px;line-height:1;text-transform:uppercase">Biggest Movers, Top Five Heats</h3>
 <p style="margin:0 0 20px;max-width:680px;line-height:1.6;color:#47456A">Same measure, limited to the five fastest heats of each year.</p>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:640px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Gained</div><div style="flex:2">Athlete</div><div style="flex:2">Team and move</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:640px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:1">Gained</div><div style="flex:2">Athlete</div><div style="flex:2">Team and move</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{moversTop}}" as="r" hint-placeholder-count="5">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:2;color:#47456A">{{r.c3}}</div><div style="flex:2;color:#47456A">{{r.c4}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c5}}</a></div></div>
 </sc-for>
 </div>
 </div>
@@ -275,11 +284,11 @@ a{color:inherit}
 <div role="group" aria-label="Gender" style="display:flex;gap:8px"><button type="button" style="{{boysStyle}}" onClick="{{showBoys}}" aria-pressed="{{boysOn}}">Boys</button><button type="button" style="{{girlsStyle}}" onClick="{{showGirls}}" aria-pressed="{{girlsOn}}">Girls</button></div>
 </div>
 <p style="margin:0 0 20px;max-width:680px;line-height:1.6;color:#47456A">{{teamScoreNote}}</p>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:720px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:2.4">Team</div><div style="flex:1">Top 5 avg</div><div style="flex:3">Scoring runners</div><div style="flex:0.6">Year</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:720px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:2.4">Team</div><div style="flex:1">Top 5 avg</div><div style="flex:3">Scoring runners</div><div style="flex:0.6">Year</div></div>
 <sc-for list="{{teamScores}}" as="r" hint-placeholder-count="5">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c0}}</div><div style="flex:2.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:3;color:#47456A">{{r.c3}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c4}}</a></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c0}}</div><div style="flex:2.4;font-weight:600">{{r.c1}}</div><div style="flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1"><span class="mlbl">Avg</span>{{r.c2}}</div><div style="flex:3;color:#47456A">{{r.c3}}</div><div style="flex:0.6;color:#47456A"><a href="{{r.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{r.c4}}</a></div></div>
 </sc-for>
 </div>
 </div>
@@ -294,11 +303,11 @@ a{color:inherit}
 </div>
 <p style="margin:0 0 20px;max-width:680px;line-height:1.6;color:#47456A">{{tlNote}}</p>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 20px"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;min-width:64px">Event</span><button type="button" style="{{tlMileStyle}}" onClick="{{setTLMile}}" aria-pressed="{{tlMileOn}}">HS Mile</button><button type="button" style="{{tl800Style}}" onClick="{{setTL800}}" aria-pressed="{{tl800On}}">HS 800m</button><button type="button" style="{{tl3200Style}}" onClick="{{setTL3200}}" aria-pressed="{{tl3200On}}">HS 3200m</button><button type="button" style="{{tlMSStyle}}" onClick="{{setTLMS}}" aria-pressed="{{tlMSOn}}">MS Mile</button><button type="button" style="{{tlAllStyle}}" onClick="{{setTLAll}}" aria-pressed="{{tlAllOn}}">All Events</button></div>
-<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
-<div style="min-width:720px">
-<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:2.4">Team</div><div style="flex:1">Finishers</div><div style="flex:1">Best Mark</div><div style="flex:3">Years</div></div>
+<div class="tw" style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div class="tw-in" style="min-width:720px">
+<div class="th-row" style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A"><div style="flex:0.4">#</div><div style="flex:2.4">Team</div><div style="flex:1">Finishers</div><div style="flex:1">Best Mark</div><div style="flex:3">Years</div></div>
 <sc-for list="{{tlRows}}" as="r" hint-placeholder-count="10">
-<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:2.4;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:1;color:#47456A">{{r.c3}}</div><div style="flex:1;color:#47456A">{{r.c5}}</div><div style="flex:3;color:#47456A;display:flex;flex-wrap:wrap;gap:4px 10px"><sc-for list="{{r.yl}}" as="z" hint-placeholder-count="5"><a href="{{z.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{z.y}}</a></sc-for></div></div>
+<div class="tr-row" style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3"><div style="flex:0.4;font-weight:600">{{r.c1}}</div><div style="flex:2.4;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;line-height:1">{{r.c2}}</div><div style="flex:1;color:#47456A"><span class="mlbl">Finishers</span>{{r.c3}}</div><div style="flex:1;color:#47456A"><span class="mlbl">Best Mark</span>{{r.c5}}</div><div style="flex:3;color:#47456A;display:flex;flex-wrap:wrap;gap:4px 10px"><sc-for list="{{r.yl}}" as="z" hint-placeholder-count="5"><a href="{{z.u}}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{{z.y}}</a></sc-for></div></div>
 </sc-for>
 </div>
 </div>
