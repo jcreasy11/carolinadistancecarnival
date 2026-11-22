@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ASICS Carolina Distance Carnival Entries</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F1EA;font-family:'Inter',system-ui,sans-serif;color:#1A1742}
+a{color:inherit}
+input,select{font-family:'Inter',system-ui,sans-serif}
+</style>
+</helmet>
+<div style="width:100%;background:#F4F1EA;color:#1A1742;font-family:'Inter',system-ui,sans-serif">
+<!-- CAMP BAR -->
+<div style="background:#F6D03F;color:#1A1742">
+<div style="max-width:1280px;margin:0 auto;padding:6px clamp(16px,4vw,64px);box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 16px;font-size:14px;font-weight:600">
+<span>Summer 2027: PR Running Camp, July 11–15 and July 17–21 at Western Carolina University</span>
+<a href="https://www.prrunningcamp.com/register" style="display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:underline">Register for Camp</a>
+</div>
+</div>
+
+<!-- HEADER -->
+<div style="background-color:#221D54;background-image:repeating-linear-gradient(0deg,rgba(244,241,234,0.07) 0,rgba(244,241,234,0.07) 2px,transparent 2px,transparent 56px);color:#F4F1EA">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,64px);box-sizing:border-box">
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:24px 0">
+<a href="Main.dc.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">ASICS Carolina Distance Carnival</a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;font-size:15px;font-weight:500">
+<a href="Main.dc.html#info" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Meet Info</a>
+<a href="Main.dc.html#schedule" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Schedule</a>
+<a href="Entries.dc.html" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px;border-bottom:3px solid {{heroAccent}}">Entries</a>
+<a href="Records.dc.html" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Records</a>
+<a href="https://www.prrunningcamp.com/" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Summer Camp</a>
+<a href="https://nc.milesplit.com/meets/750625-asics-carolina-distance-carnival-2027" target="_blank" rel="noopener" style="background:{{heroAccent}};color:#1A1742;text-decoration:none;font-weight:600;padding:12px 22px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Register on MileSplit</a>
+</div>
+</div>
+<div style="padding:56px 0 64px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:{{heroAccent}}">{{eyebrow}}</div>
+<h1 style="margin:8px 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(48px,8vw,104px);line-height:0.92;text-transform:uppercase">Entries <span style="color:{{heroAccent}}">list</span></h1>
+<p style="margin:0 0 40px;max-width:640px;font-size:19px;line-height:1.5;color:#D9D6CC">See who is entered in every event, sorted by seed, name or team, with a projected team score for the Mile.</p>
+<div style="display:{{dataGrid}};grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:rgba(244,241,234,0.18);border-top:1px solid rgba(244,241,234,0.18)">
+<div style="background:#221D54;padding:24px 24px 0 0"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:48px;line-height:1">{{nEntries}}</div><div style="font-size:14px;color:#D9D6CC;margin-top:6px">Total entries</div></div>
+<div style="background:#221D54;padding:24px 24px 0"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:48px;line-height:1">{{nAthletes}}</div><div style="font-size:14px;color:#D9D6CC;margin-top:6px">Athletes</div></div>
+<div style="background:#221D54;padding:24px 24px 0"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:48px;line-height:1">{{nTeams}}</div><div style="font-size:14px;color:#D9D6CC;margin-top:6px">Teams</div></div>
+<div style="background:#221D54;padding:24px 24px 0"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:48px;line-height:1">{{nStates}}</div><div style="font-size:14px;color:#D9D6CC;margin-top:6px">States</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EMPTY STATE -->
+<div style="display:{{emptyShow}};max-width:1280px;margin:0 auto;padding:64px clamp(16px,4vw,64px) 32px;box-sizing:border-box">
+<div style="background:#FFFFFF;border:1px solid #D9D4C7;border-top:6px solid #1A1742;padding:40px;max-width:760px">
+<h2 style="margin:0 0 12px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(32px,4.5vw,48px);line-height:1;text-transform:uppercase">Entries Open January 1, 2027</h2>
+<p style="margin:0 0 20px;line-height:1.6;color:#47456A">Registration for the 2027 ASICS Carolina Distance Carnival opens on MileSplit on January 1, 2027 and closes April 10, 2027 at 8 PM ET. The full entries list, seeds and Mile team projections will appear here as registrations come in.</p>
+<a href="https://nc.milesplit.com/meets/750625-asics-carolina-distance-carnival-2027" target="_blank" rel="noopener" style="background:#1A1742;color:#F4F1EA;text-decoration:none;font-weight:600;padding:14px 28px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Register on MileSplit</a>
+</div>
+</div>
+
+<!-- EVENT TABS AND CONTROLS -->
+<div style="display:{{dataShow}};max-width:1280px;margin:0 auto;padding:48px clamp(16px,4vw,64px) 16px;box-sizing:border-box">
+<div style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A;margin-bottom:10px">Event</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+<button type="button" style="{{t0Style}}" onClick="{{setEv0}}" aria-pressed="{{t0On}}">HS Boys 800m</button><button type="button" style="{{t1Style}}" onClick="{{setEv1}}" aria-pressed="{{t1On}}">HS Girls 800m</button><button type="button" style="{{t2Style}}" onClick="{{setEv2}}" aria-pressed="{{t2On}}">HS Boys Mile</button><button type="button" style="{{t3Style}}" onClick="{{setEv3}}" aria-pressed="{{t3On}}">HS Girls Mile</button><button type="button" style="{{t4Style}}" onClick="{{setEv4}}" aria-pressed="{{t4On}}">MS Boys Mile</button><button type="button" style="{{t5Style}}" onClick="{{setEv5}}" aria-pressed="{{t5On}}">MS Girls Mile</button><button type="button" style="{{t6Style}}" onClick="{{setEv6}}" aria-pressed="{{t6On}}">PR Running Camp Boys 3200m</button><button type="button" style="{{t7Style}}" onClick="{{setEv7}}" aria-pressed="{{t7On}}">PR Running Camp Girls 3200m</button><button type="button" style="{{t8Style}}" onClick="{{setEv8}}" aria-pressed="{{t8On}}">Special Olympics 100m</button>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
+<div style="flex:2 1 280px;display:flex;flex-direction:column;gap:6px">
+<label for="q" style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">Search athlete or team</label>
+<input id="q" type="text" value="{{q}}" onChange="{{onQ}}" onKeyDown="{{keyStop}}" onKeyUp="{{keyStop}}" onKeyPress="{{keyStop}}" placeholder="Type a name, press Enter" style="font-size:16px;padding:12px 14px;min-height:44px;box-sizing:border-box;border:2px solid #1A1742;background:#FFFFFF;color:#1A1742">
+</div>
+<div style="flex:1 1 160px;display:flex;flex-direction:column;gap:6px">
+<label for="sort" style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">Sort by</label>
+<select id="sort" onChange="{{onSort}}" style="font-size:16px;padding:12px 14px;min-height:44px;box-sizing:border-box;border:2px solid #1A1742;background:#FFFFFF;color:#1A1742"><option value="Seed" selected="{{sSeed}}">Seed</option><option value="Name" selected="{{sName}}">Name</option><option value="Team" selected="{{sTeam}}">Team</option></select>
+</div>
+<a href="https://nc.milesplit.com/meets/750625-asics-carolina-distance-carnival-2027" target="_blank" rel="noopener" style="border:2px solid #1A1742;text-decoration:none;font-weight:600;font-size:15px;padding:8px 20px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Heat Sheets Post Wednesday, April 14</a>
+</div>
+</div>
+
+<!-- EVENT TABLE -->
+<div style="display:{{dataShow}};max-width:1280px;margin:0 auto;padding:16px clamp(16px,4vw,64px) 32px;box-sizing:border-box">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:12px">
+<h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(32px,4.5vw,48px);line-height:1;text-transform:uppercase">{{evTitle}}</h2>
+<div style="font-weight:600;color:#47456A">{{evCount}}</div>
+</div>
+<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div style="min-width:560px">
+<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
+<div style="flex:0 0 48px">#</div>
+<div style="flex:2 1 0">Athlete</div>
+<div style="flex:0 0 110px">Seed</div>
+<div style="flex:2 1 0">Team</div>
+</div>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3">
+<div style="flex:0 0 48px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{r.n}}</div>
+<div style="flex:2 1 0;font-weight:600">{{r.name}}</div>
+<div style="flex:0 0 110px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{r.seed}}</div>
+<div style="flex:2 1 0;color:#47456A">{{r.team}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+<p style="margin:16px 0 0;font-size:14px;line-height:1.6;color:#47456A;max-width:720px">Athletes without a seed mark are listed after seeded athletes. Names will link to MileSplit athlete profiles and teams to team pages.</p>
+</div>
+
+<!-- MILE TEAM PROJECTIONS -->
+<div style="display:{{projShow}};max-width:1280px;margin:0 auto;padding:32px clamp(16px,4vw,64px) 32px;box-sizing:border-box">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:12px">
+<h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(32px,4.5vw,48px);line-height:1;text-transform:uppercase">{{projTitle}}</h2>
+<div style="font-weight:600;color:#47456A">Scored cross-country style from seed marks</div>
+</div>
+<div style="overflow-x:auto;background:#FFFFFF;border:1px solid #D9D4C7">
+<div style="min-width:640px">
+<div style="display:flex;gap:16px;padding:16px 24px;border-bottom:2px solid #1A1742;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#47456A">
+<div style="flex:0 0 48px">Place</div>
+<div style="flex:2 1 0">Team</div>
+<div style="flex:0 0 110px;text-align:right">Proj. score</div>
+<div style="flex:3 1 0">Scoring seeds</div>
+</div>
+<sc-for list="{{teams}}" as="t" hint-placeholder-count="5">
+<div style="display:flex;gap:16px;align-items:baseline;padding:16px 24px;border-bottom:1px solid #E5E0D3">
+<div style="flex:0 0 48px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{t.place}}</div>
+<div style="flex:2 1 0;font-weight:600">{{t.team}}</div>
+<div style="flex:0 0 110px;text-align:right;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;line-height:1">{{t.score}}</div>
+<div style="flex:3 1 0;color:#47456A;font-size:15px">{{t.seeds}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+<p style="margin:16px 0 0;font-size:14px;line-height:1.6;color:#47456A;max-width:720px">Each team’s top five seeded runners score their seed place, lowest total wins, and a team needs five seeded runners. Projections are for fun and are not race assignments.</p>
+</div>
+
+<!-- SEED UPDATE -->
+<div style="max-width:1280px;margin:0 auto;padding:32px clamp(16px,4vw,64px) 96px;box-sizing:border-box">
+<div style="background:#AC312A;color:#F4F1EA;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+<div style="flex:1 1 360px">
+<h3 style="margin:0 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:32px;text-transform:uppercase">Ran Faster Since You Registered?</h3>
+<p style="margin:0;line-height:1.6;color:#E4E8E1">Seeds come from the MileSplit database and update throughout registration. Scratches are emailed to the meet director after registration closes. New season bests update as long as your result is on the MileSplit profile used to register, so <a href="https://www.milesplit.com/athletes" target="_blank" rel="noopener" style="color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px">claim your MileSplit profile</a> first.</p>
+</div>
+<a href="https://nc.milesplit.com/meets/750625-asics-carolina-distance-carnival-2027/entries" target="_blank" rel="noopener" style="background:#F4F1EA;color:#1A1742;text-decoration:none;font-weight:600;padding:14px 28px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">View Your Entries on MileSplit</a>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#221D54;color:#F4F1EA">
+<div style="max-width:1280px;margin:0 auto;padding:40px clamp(16px,4vw,64px);box-sizing:border-box;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;font-size:14px;color:#D9D6CC">
+<div>
+<div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:0.06em;text-transform:uppercase;color:#F4F1EA">ASICS Carolina Distance Carnival</div>
+<div style="margin-top:8px">Meet director Jason Creasy · jason.creasy11@gmail.com · <a href="http://instagram.com/carolinadistancecarnival" style="color:#F4F1EA;display:inline-flex;align-items:center;min-height:44px">Instagram @carolinadistancecarnival</a></div>
+</div>
+<div style="max-width:420px;line-height:1.6">Hosted by Velocity Meets. Presented by Fleet Feet Charlotte. Sponsored by ASICS Running. Timing by Trojan Timing. Registration, results and streaming run on MileSplit. Summer camp: <a href="https://www.prrunningcamp.com/" style="color:#F4F1EA;display:inline-flex;align-items:center;min-height:44px">prrunningcamp.com</a></div>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"heroAccent":{"editor":"color","default":"#F6D03F","options":["#F6D03F","#FFFFFF","#AC312A"]},"$preview":{"width":1360,"height":2300}}'>
+class Component extends DCLogic {
+renderVals() {
+const EV = ["HS Boys 800m", "HS Girls 800m", "HS Boys Mile", "HS Girls Mile", "MS Boys Mile", "MS Girls Mile", "PR Running Camp Boys 3200m", "PR Running Camp Girls 3200m", "Special Olympics 100m"];
+const ROWS = [];
+const STATS = { entries: 0, athletes: 0, teams: 0, states: 0, updated: '' };
+const st = this.state || {};
+const ev = st.ev == null ? 2 : st.ev, q = (st.q || '').trim().toLowerCase(), sort = st.sort || 'Seed';
+const dark = { bg: '#1A1742', fg: '#F4F1EA' }, light = { bg: '#FFFFFF', fg: '#1A1742' };
+const base = 'font-family:inherit;font-weight:600;font-size:15px;padding:8px 18px;min-height:44px;box-sizing:border-box;cursor:pointer;border:2px solid #1A1742;';
+const sec = s => { if (!s) return 1e9; const p = s.split(':'); return p.length === 2 ? +p[0] * 60 + +p[1] : +p[0]; };
+const nm = r => r[1] + ', ' + r[2];
+let all = ROWS.filter(r => r[0] === ev).map(r => ({ last: r[1], name: nm(r), seed: r[3], team: r[4], secs: sec(r[3]) }));
+all.sort((a, b) => a.secs - b.secs || a.name.localeCompare(b.name));
+let list = all.filter(r => !q || r.name.toLowerCase().includes(q) || r.team.toLowerCase().includes(q));
+if (sort === 'Name') list = list.slice().sort((a, b) => a.name.localeCompare(b.name));
+if (sort === 'Team') list = list.slice().sort((a, b) => a.team.localeCompare(b.team) || a.secs - b.secs);
+const isMile = /Mile/.test(EV[ev]) && !/Camp/.test(EV[ev]);
+const byTeam = {};
+all.forEach((r, i) => { if (r.secs < 1e9 && !/^Unattached/.test(r.team)) (byTeam[r.team] = byTeam[r.team] || []).push(Object.assign({ place: i + 1 }, r)); });
+const proj = Object.keys(byTeam).filter(t => byTeam[t].length >= 5).map(t => { const f = byTeam[t].slice(0, 5); return { team: t, total: f.reduce((s, r) => s + r.place, 0), seeds: f.map(r => r.seed).join(' \u00b7 ') }; }).sort((a, b) => a.total - b.total).slice(0, 15).map((t, i) => ({ place: String(i + 1), team: t.team, score: String(t.total), seeds: t.seeds }));
+const v = { heroAccent: this.props.heroAccent ?? '#F6D03F',
+updated: STATS.updated, nEntries: String(STATS.entries), nAthletes: String(STATS.athletes), nTeams: String(STATS.teams), nStates: String(STATS.states),
+keyStop: e => { e.stopPropagation(); if (e.type === 'keydown' && (e.key === ' ' || e.code === 'Space')) { e.preventDefault(); const t = e.target; if (t && t.setRangeText) t.setRangeText(' ', t.selectionStart, t.selectionEnd, 'end'); } }, q: st.q || '', onQ: e => this.setState({ q: e.target.value }), onSort: e => this.setState({ sort: e.target.value }),
+sSeed: sort === 'Seed', sName: sort === 'Name', sTeam: sort === 'Team',
+evTitle: EV[ev], evCount: list.length + ' of ' + all.length + ' entries',
+rows: list.map((r, i) => ({ n: String(i + 1), name: r.name, seed: r.seed || '\u2014', team: r.team })),
+projShow: (isMile && ROWS.length) ? 'block' : 'none', dataShow: ROWS.length ? 'block' : 'none', dataGrid: ROWS.length ? 'grid' : 'none', emptyShow: ROWS.length ? 'none' : 'block', eyebrow: ROWS.length ? 'Pulled from MileSplit registration \u00b7 Last updated ' + STATS.updated : 'Registration opens January 1, 2027', projTitle: EV[ev] + ' Team Projections', teams: proj };
+EV.forEach((l, i) => { v['t' + i + 'Style'] = base + (i === ev ? 'background:' + dark.bg + ';color:' + dark.fg : 'background:' + light.bg + ';color:' + light.fg); v['t' + i + 'On'] = i === ev; v['setEv' + i] = () => this.setState({ ev: i }); });
+return v;
+}
+}
+</script>
+</body>
+</html>
