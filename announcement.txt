@@ -1,0 +1,3 @@
+# Site announcement banner (shows on every page).
+# Line 1: message. Line 2 (optional): link. Line 3 (optional): link text.
+# Delete the message lines to hide the banner. Lines starting with # are ignored.
