@@ -372,7 +372,7 @@ const spBuild = (col, evKey, nKey, fmt) => {
   SEARCH.s.forEach(r => { if (r[2] === spGI && r[col] && (spn.length < 2 || this._sa[r[0]].includes(spn) || this._st[r[1]].includes(spn))) { cnt[r[3]] = (cnt[r[3]] || 0) + 1; if (r[3] === ev) hit.push(r); } });
   hit.sort((a, b) => a[col] - b[col] || a[4] - b[4]);
   const nx = spSteps.find(x => x > n) || 250;
-  const rows = hit.slice(0, n).map((r, i) => ({ c1: String(i + 1), c2: fmt(r[col]), c3: SEARCH.a[r[0]], c4: SEARCH.t[r[1]] + ' \u00b7 ran ' + r[7], c5: String(r[4]), u: yu(r[4]) }));
+  const rows = hit.slice(0, n).map((r, i) => ({ c1: String(i + 1), c2: fmt(r[col]), c3: SEARCH.a[r[0]], c4: SEARCH.t[r[1]] + ' \u00b7 ' + r[7], c5: String(r[4]), u: yu(r[4]) }));
   return { ev, cnt, rows, total: hit.length, n, nx };
 };
 const sp4 = spBuild(5, 's4e', 's4n', fmt4), sp8 = spBuild(6, 's8e', 's8n', f8);
